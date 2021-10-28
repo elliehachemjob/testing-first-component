@@ -150,39 +150,39 @@ test("changing input value then clicking on subtract  works correctly ", () => {
   expect(counterEl.textContent).toBe("-5");
 });
 
-test("adding and subtracting leads to the correct counter number  ", () => {
-  const { getByTestId } = render(<Counter />);
-  const addBtnEL = getByTestId("add-btn");
-  const subtractBtnEL = getByTestId("subtract-btn");
-  const counterEl = getByTestId("counter");
-  const inputEl = getByTestId("input");
+// test("adding and subtracting leads to the correct counter number  ", () => {
+//   const { getByTestId } = render(<Counter />);
+//   const addBtnEL = getByTestId("add-btn");
+//   const subtractBtnEL = getByTestId("subtract-btn");
+//   const counterEl = getByTestId("counter");
+//   const inputEl = getByTestId("input");
 
-  fireEvent.change(inputEl, {
-    target: {
-      value: "10",
-    },
-  });
-  fireEvent.click(addBtnEL);
-  fireEvent.click(addBtnEL);
-  fireEvent.click(addBtnEL);
-  fireEvent.click(addBtnEL);
-  fireEvent.click(subtractBtnEL);
-  fireEvent.click(subtractBtnEL);
+//   fireEvent.change(inputEl, {
+//     target: {
+//       value: "10",
+//     },
+//   });
+//   fireEvent.click(addBtnEL);
+//   fireEvent.click(addBtnEL);
+//   fireEvent.click(addBtnEL);
+//   fireEvent.click(addBtnEL);
+//   fireEvent.click(subtractBtnEL);
+//   fireEvent.click(subtractBtnEL);
 
-  expect(counterEl.textContent).toBe("20");
+//   expect(counterEl.textContent).toBe("20");
 
-  fireEvent.change(inputEl, {
-    target: {
-      value: "5 ",
-    },
-  });
+//   fireEvent.change(inputEl, {
+//     target: {
+//       value: "5 ",
+//     },
+//   });
 
-  fireEvent.click(addBtnEL);
-  fireEvent.click(subtractBtnEL);
-  fireEvent.click(subtractBtnEL);
+//   fireEvent.click(addBtnEL);
+//   fireEvent.click(subtractBtnEL);
+//   fireEvent.click(subtractBtnEL);
 
-  expect(counterEl.textContent).toBe("15");
-});
+//   expect(counterEl.textContent).toBe("15");
+// });
 
 // test("counter contains correct className  ", () => {
 //   const { getByTestId } = render(<Counter />);
