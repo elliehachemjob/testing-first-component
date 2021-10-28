@@ -1,7 +1,35 @@
 import React from "react"; //need react to test a react component
 import Counter from "../Counter"; //component we want to test
-import { render, fireEvent } from "@testing-library/react"; //render component in a virtual dom
+import { render, fireEvent, cleanup } from "@testing-library/react"; //render component in a virtual dom
 import "@testing-library/jest-dom/extend-expect"; // to use the excpect keyword
+
+//to run before each test and does not need imponrt and to save a lot of writing code
+//in it we write the logic that is gonna be excuted before each test
+
+//this code save us from retyping same code
+//helpful to reduce some code espically if it s a lot
+// let getByTestId;
+
+// beforeEach(() => {
+//   const component = render(<Counter />);
+//   getByTestId = component.getByTestId;
+// });
+
+// same but after each
+// afterEach(() => {
+//  cleanup()  //cleans from doms though that is already specfied
+// });
+
+// before all test have run
+// beforeAll(() => {
+//  cleanup()  //cleans from doms though that is already specfied
+// });
+
+// after all test have run
+// afterAll(() => {
+//  cleanup()  //cleans from doms though that is already specfied
+// });
+
 //using test function
 //first field is just descrprition of test
 //second field a function that have all logic of the test
