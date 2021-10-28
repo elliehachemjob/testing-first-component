@@ -14,12 +14,13 @@ function Counter() {
   return (
     <div>
       <h3 data-testid="header">My Counter</h3>
-      <h2 data-testid="counter">
-        className=
-        {`${counterValue > +100 ? "green" : ""} ${
-          counterValue < +100 ? "red" : ""
+      <h2
+        data-testid="counter"
+        className={`${counterValue >= 100 ? "green" : ""} ${
+          counterValue <= -100 ? "red" : ""
         }`}
-        {counterValue}`{counterValue}
+      >
+        {counterValue}
       </h2>
       <button data-testid="subtract-btn" onClick={subtractFromCounter}>
         -
@@ -30,7 +31,7 @@ function Counter() {
       <input
         data-testid="input"
         type="number"
-        value={inputValue}
+        value={parseInt(inputValue)}
         onChange={(e) => {
           setInputValue(parseInt(e.target.value));
         }}
